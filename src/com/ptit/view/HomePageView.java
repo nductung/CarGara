@@ -5,17 +5,22 @@
  */
 package com.ptit.view;
 
+import com.ptit.model.Nhanvien;
+
 /**
  *
- * @author DUONGNV
+ * @author TUNGND
  */
 public class HomePageView extends javax.swing.JFrame {
+
+    Nhanvien nhanvien;
 
     /**
      * Creates new form HomeView
      */
-    public HomePageView() {
+    public HomePageView(Nhanvien nv) {
         initComponents();
+        nhanvien = nv;
         this.setLocationRelativeTo(null);
     }
 
@@ -29,41 +34,53 @@ public class HomePageView extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButtonReceive = new javax.swing.JButton();
+        jButtonNhapLinhKien = new javax.swing.JButton();
         jLabelHomePage = new javax.swing.JLabel();
+        jButtonDangXuat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButtonReceive.setText("Nhận xe");
-        jButtonReceive.addActionListener(new java.awt.event.ActionListener() {
+        jButtonNhapLinhKien.setText("Nhập linh kiện");
+        jButtonNhapLinhKien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonReceiveActionPerformed(evt);
+                jButtonNhapLinhKienActionPerformed(evt);
             }
         });
 
         jLabelHomePage.setText("HỆ THỐNG QUẢN LÝ GARA Ô TÔ");
 
+        jButtonDangXuat.setText("Đăng xuất");
+        jButtonDangXuat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDangXuatActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(152, 152, 152)
-                .addComponent(jButtonReceive)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(114, Short.MAX_VALUE)
                 .addComponent(jLabelHomePage)
                 .addGap(110, 110, 110))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(141, 141, 141)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonNhapLinhKien, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(70, Short.MAX_VALUE)
                 .addComponent(jLabelHomePage)
-                .addGap(56, 56, 56)
-                .addComponent(jButtonReceive)
-                .addGap(115, 115, 115))
+                .addGap(57, 57, 57)
+                .addComponent(jButtonNhapLinhKien)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonDangXuat)
+                .addGap(73, 73, 73))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -86,13 +103,21 @@ public class HomePageView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonReceiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReceiveActionPerformed
+    private void jButtonNhapLinhKienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNhapLinhKienActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        SearchCustomerView searchCustomerView = new SearchCustomerView();
+        SearchNhaCungCaprView searchCustomerView = new SearchNhaCungCaprView(nhanvien);
         searchCustomerView.setVisible(true);
-        searchCustomerView.setTitle("Tìm khách hàng theo tên");
-    }//GEN-LAST:event_jButtonReceiveActionPerformed
+        searchCustomerView.setTitle("Nhà cung cấp");
+    }//GEN-LAST:event_jButtonNhapLinhKienActionPerformed
+
+    private void jButtonDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDangXuatActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        LoginView loginView = new LoginView();
+        loginView.setVisible(true);
+        loginView.setTitle("Đăng nhập");
+    }//GEN-LAST:event_jButtonDangXuatActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,13 +150,14 @@ public class HomePageView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HomePageView().setVisible(true);
+                new HomePageView(null).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonReceive;
+    private javax.swing.JButton jButtonDangXuat;
+    private javax.swing.JButton jButtonNhapLinhKien;
     private javax.swing.JLabel jLabelHomePage;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

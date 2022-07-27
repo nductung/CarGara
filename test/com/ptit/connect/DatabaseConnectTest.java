@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author DUONGNV
+ * @author TUNGND
  */
 public class DatabaseConnectTest {
 

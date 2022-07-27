@@ -40,9 +40,9 @@ CREATE TABLE Manager(
 );
 
 INSERT INTO Manager 
-VALUES	('1', 'duongnv', 'duong1234', '20000000', 'Nguyen Van Duong', 'Ha Dong - Ha Noi','0976888999','04/02/1997');
+VALUES	('1', 'TUNGND', 'duong1234', '20000000', 'Nguyen Van Duong', 'Ha Dong - Ha Noi','0976888999','04/02/1997');
 GO
-SELECT * FROM Manager WHERE account = 'duongnv' and password = 'duong1234'
+SELECT * FROM Manager WHERE account = 'TUNGND' and password = 'duong1234'
 
 CREATE TABLE Technician(
 	technicianID NVARCHAR(10) PRIMARY KEY,

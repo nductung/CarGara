@@ -5,16 +5,17 @@
  */
 package com.ptit.view;
 
-import com.ptit.dao.ManagerDAO;
+import com.ptit.dao.NhanvienDAO;
+import com.ptit.model.Nhanvien;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author DUONGNV
+ * @author TUNGND
  */
 public class LoginView extends javax.swing.JFrame {
 
-    ManagerDAO managerDAO;
+    NhanvienDAO nhanVienDAO;
 
     /**
      * Creates new form LoginView
@@ -22,7 +23,7 @@ public class LoginView extends javax.swing.JFrame {
     public LoginView() {
         initComponents();
         this.setLocationRelativeTo(null);
-        managerDAO = new ManagerDAO();
+        nhanVienDAO = new NhanvienDAO();
     }
 
     /**
@@ -35,27 +36,27 @@ public class LoginView extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabelAccount = new javax.swing.JLabel();
-        jLabelPass = new javax.swing.JLabel();
-        jTextFieldAccount = new javax.swing.JTextField();
-        jPasswordField = new javax.swing.JPasswordField();
+        jLabelUsername = new javax.swing.JLabel();
+        jLabelPassword = new javax.swing.JLabel();
+        jTextFieldUsername = new javax.swing.JTextField();
+        jTextFieldPassword = new javax.swing.JPasswordField();
         jButtonLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelAccount.setText("Tài Khoản");
+        jLabelUsername.setText("Email");
 
-        jLabelPass.setText("Mật khẩu");
+        jLabelPassword.setText("Mật khẩu");
 
-        jTextFieldAccount.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAccountActionPerformed(evt);
+                jTextFieldUsernameActionPerformed(evt);
             }
         });
 
-        jPasswordField.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordFieldActionPerformed(evt);
+                jTextFieldPasswordActionPerformed(evt);
             }
         });
 
@@ -72,30 +73,31 @@ public class LoginView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(66, 66, 66)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelPass)
-                    .addComponent(jLabelAccount))
-                .addGap(38, 38, 38)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelPassword)
+                    .addComponent(jLabelUsername))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonLogin)
-                    .addComponent(jTextFieldAccount)
-                    .addComponent(jPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
-                .addContainerGap(79, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jTextFieldUsername)
+                        .addComponent(jTextFieldPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
+                .addGap(66, 66, 66)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAccount)
-                    .addComponent(jTextFieldAccount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelUsername)
+                    .addComponent(jTextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelPass)
-                    .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
+                    .addComponent(jLabelPassword)
+                    .addComponent(jTextFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
                 .addComponent(jButtonLogin)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -118,26 +120,32 @@ public class LoginView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAccountActionPerformed
+    private void jTextFieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAccountActionPerformed
+    }//GEN-LAST:event_jTextFieldUsernameActionPerformed
 
-    private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed
+    private void jTextFieldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordFieldActionPerformed
+    }//GEN-LAST:event_jTextFieldPasswordActionPerformed
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
 
-        String account = jTextFieldAccount.getText();
-        String pass = jPasswordField.getText();
-
-        if ("".equals(account) || "".equals(pass) || !managerDAO.checkLogin(account, pass)) {
-            JOptionPane.showMessageDialog(this, "Sai thông tin đăng nhập!");
+        String account = jTextFieldUsername.getText();
+        String pass = jTextFieldPassword.getText();
+        if ("".equals(account)) {
+            JOptionPane.showMessageDialog(this, "Tên đăng nhập không được để trống");
+        } else if ("".equals(pass)) {
+            JOptionPane.showMessageDialog(this, "Mật khẩu không được để trống");
         } else {
-            this.setVisible(false);
-            HomePageView homePageView = new HomePageView();
-            homePageView.setVisible(true);
-            homePageView.setTitle("Hệ thống quản lý gara ô tô");
+            Nhanvien nhanvien = nhanVienDAO.checkLogin(account, pass);
+            if (nhanvien == null) {
+                JOptionPane.showMessageDialog(this, "Sai thông tin đăng nhập!");
+            } else {
+                this.setVisible(false);
+                HomePageView homePageView = new HomePageView(nhanvien);
+                homePageView.setVisible(true);
+                homePageView.setTitle("Hệ thống quản lý gara ô tô");
+            }
         }
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
@@ -181,10 +189,10 @@ public class LoginView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonLogin;
-    private javax.swing.JLabel jLabelAccount;
-    private javax.swing.JLabel jLabelPass;
+    private javax.swing.JLabel jLabelPassword;
+    private javax.swing.JLabel jLabelUsername;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField;
-    private javax.swing.JTextField jTextFieldAccount;
+    private javax.swing.JPasswordField jTextFieldPassword;
+    private javax.swing.JTextField jTextFieldUsername;
     // End of variables declaration//GEN-END:variables
 }

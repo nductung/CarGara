@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author DUONGNV
+ * @author TUNGND
  */
 public class AddCustomerViewTest {
     
@@ -44,7 +44,7 @@ public class AddCustomerViewTest {
     public void testMain() {
         System.out.println("main");
         String[] args = null;
-        AddCustomerView.main(args);
+        AddNhaCungCapView.main(args);
     }
     
 }

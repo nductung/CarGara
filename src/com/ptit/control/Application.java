@@ -9,10 +9,11 @@ import com.ptit.view.LoginView;
 
 /**
  *
- * @author DUONGNV
+ * @author TUNGND
  */
 public class Application {
-     public static void main(String[] args) {
+
+    public static void main(String[] args) {
         LoginView loginView = new LoginView();
         loginView.setVisible(true);
         loginView.setTitle("Đăng nhập");

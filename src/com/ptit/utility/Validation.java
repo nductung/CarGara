@@ -5,10 +5,8 @@
  */
 package com.ptit.utility;
 
-import com.ptit.dao.CarDAO;
-import com.ptit.dao.CustomerDAO;
-import com.ptit.model.Car;
-import com.ptit.model.Customer;
+import com.ptit.model.NhaCungCap;
+import com.ptit.model.LinhKien;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,45 +15,43 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author DUONGNV
+ * @author TUNGND
  */
 public class Validation {
 
-    public static boolean isCustomerValid(Customer cus) {
-        if (isNameValid(cus.getFullName()) && isDateValid(cus.getBirthDate()) && isAddressValid(cus.getAddress()) && isPhoneValid(cus.getPhone()) && isNoteValid(cus.getNote())) {
+    public static boolean isCustomerValid(NhaCungCap ncc) {
+        if (isStringValid(ncc.getMa()) && isStringValid(ncc.getDiaChi()) && isStringValid(ncc.getDienThoai()) && isStringValid(ncc.getEmail()) && isStringValid(ncc.getTen())) {
             return true;
         }
         return false;
     }
 
-    public static boolean isCarValid(Car c) {
-        if (isLicenseValid(c.getLicense()) && isModelValid(c.getModel()) && isMakerValid(c.getMaker()) && isNoteValid(c.getNote()) && isDupCar(c.getLicense())) {
+    public static boolean isNhaCungCapValid(NhaCungCap ncc) {
+        if (isStringValid(ncc.getMa()) && isStringValid(ncc.getDiaChi()) && isStringValid(ncc.getDienThoai()) && isStringValid(ncc.getEmail()) && isStringValid(ncc.getTen())) {
             return true;
         }
         return false;
     }
 
-    public static boolean isDupCar(String str) {
-        CarDAO carDAO = new CarDAO();
-        for (Car car : carDAO.getAllCar()) {
-            if (car.getLicense().equals(str)) {
-                JOptionPane.showMessageDialog(null, "Xe đã tồn tại!", "Xe đã tồn tại!", 1);
-                return false;
-            }
+    public static boolean isLinhKienValid(LinhKien lk) {
+        if (isStringValid(lk.getMa()) && isStringValid(lk.getTen()) && isStringValid(lk.getDonVi()) && isStringValid(lk.getHang())) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isStringValid(String str) {
+        if (str.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Không được để trống thông tin!", "Thông báo", 1);
+            return false;
+        }
+        if (str.length() > 255) {
+            JOptionPane.showMessageDialog(null, "Không được quá 255 kí tự!", "Thông báo", 1);
+            return false;
         }
         return true;
     }
 
-//    public static boolean isDupCustomer(Customer cus) {
-//        CustomerDAO customerDAO = new CustomerDAO();
-//        for (Customer customer : customerDAO.getAllCustomer()) {
-//            if (customer.getFullName().equals(cus.getFullName()) && customer.getPhone().equals(cus.getPhone())) {
-//                JOptionPane.showMessageDialog(null, "Khách hàng đã tồn tại!", "Khách hàng đã tồn tại!", 1);
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
     public static boolean isNameValid(String str) {
         if (str.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Không được để trống thông tin!", "Không được để trống thông tin!", 1);

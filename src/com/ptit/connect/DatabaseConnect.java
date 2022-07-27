@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author DUONGNV
+ * @author TUNGND
  */
 public class DatabaseConnect {
 
@@ -21,9 +21,9 @@ public class DatabaseConnect {
     DatabaseConnect() {
         try {
             final String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-            final String server = "jdbc:sqlserver://localhost:1433;databaseName = CarGara";
+            final String server = "jdbc:sqlserver://localhost:1433;databaseName=CarGara";
             final String user = "sa";
-            final String pass = "1234";
+            final String pass = "Strong.Pwd-123";
             Class.forName(driver);
             connection = DriverManager.getConnection(server, user, pass);
         } catch (ClassNotFoundException | SQLException e) {
