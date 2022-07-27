@@ -43,9 +43,4 @@ public class DatabaseConnect {
         }
         return instance;
     }
-
-//    public static void main(String[] args) {
-//        DatabaseConnect connect = new DatabaseConnect();
-//        System.out.println(connect.getConnection());
-//    }
 }
