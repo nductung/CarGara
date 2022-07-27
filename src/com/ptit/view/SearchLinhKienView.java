@@ -277,7 +277,11 @@ public class SearchLinhKienView extends javax.swing.JFrame {
         try {
             donGia = Float.parseFloat(jTextFieldDonGia.getText());
             soLuong = Integer.parseInt(jTextFieldSoLuong.getText());
-            validate = 1;
+            if (donGia > 0 && soLuong > 0) {
+                validate = 1;
+            } else {
+                JOptionPane.showMessageDialog(this, "Đơn giá và số lượng phải lớn hơn 0");
+            }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Đơn giá và số lượng phải là số");
         }
