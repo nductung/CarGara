@@ -21,6 +21,31 @@ import java.util.List;
  */
 public class LinhKienDAO {
 
+    public List<LinhKien> getLinhKien(int nhaCungCapID, String key) {
+        List<LinhKien> linhKiens = null;
+        String sql = "SELECT * FROM LinhKien WHERE nhaCungCapID = " + nhaCungCapID + " AND LOWER( ten ) LIKE  '%" + key + "%'";
+        Connection connect = null;
+        try {
+            connect = DatabaseConnect.getInstance().getConnection();
+            Statement stmt = connect.createStatement();
+            linhKiens = new ArrayList<>();
+            ResultSet rs = stmt.executeQuery(sql);
+            LinhKien linhKien = null;
+            while (rs.next()) {
+                linhKien = new LinhKien();
+                linhKien.setID(rs.getInt(1));
+                linhKien.setMa(rs.getString(2));
+                linhKien.setTen(rs.getString(3));
+                linhKien.setDonVi(rs.getString(4));
+                linhKien.setHang(rs.getString(6));
+                linhKiens.add(linhKien);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return linhKiens;
+    }
+
     public int createLinhKien(LinhKien linhKien) {
         Connection connect = null;
         int row = 0;
@@ -53,30 +78,5 @@ public class LinhKienDAO {
             row = 0;
         }
         return row;
-    }
-
-    public List<LinhKien> getLinhKien(int nhaCungCapID, String key) {
-        List<LinhKien> linhKiens = null;
-        String sql = "SELECT * FROM LinhKien WHERE nhaCungCapID = " + nhaCungCapID + " AND LOWER( ten ) LIKE  '%" + key + "%'";
-        Connection connect = null;
-        try {
-            connect = DatabaseConnect.getInstance().getConnection();
-            Statement stmt = connect.createStatement();
-            linhKiens = new ArrayList<LinhKien>();
-            ResultSet rs = stmt.executeQuery(sql);
-            LinhKien linhKien = null;
-            while (rs.next()) {
-                linhKien = new LinhKien();
-                linhKien.setID(rs.getInt(1));
-                linhKien.setMa(rs.getString(2));
-                linhKien.setTen(rs.getString(3));
-                linhKien.setDonVi(rs.getString(4));
-                linhKien.setHang(rs.getString(6));
-                linhKiens.add(linhKien);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return linhKiens;
     }
 }

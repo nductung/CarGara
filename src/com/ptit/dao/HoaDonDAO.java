@@ -27,9 +27,11 @@ public class HoaDonDAO {
         int row = 0;
         try {
             connect = DatabaseConnect.getInstance().getConnection();
-            String sql = "INSERT INTO HoaDon VALUES(?,?,?,?,?)";
-            StringBuffer sql2 = new StringBuffer("insert into HoadonLinhkien (donGia, soLuong, thanhTien, hoaDonID, linhKienID) values (?,?,?,?,?)");
-            PreparedStatement prepar = connect.prepareStatement(sql);
+
+            StringBuilder sql = new StringBuilder("INSERT INTO HoadonLinhkien (donGia, soLuong, thanhTien, hoaDonID, linhKienID) VALUES (?,?,?,?,?)");
+
+            String sql2 = "INSERT INTO HoaDon VALUES(?,?,?,?,?)";
+            PreparedStatement prepar = connect.prepareStatement(sql2);
 
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             LocalDateTime now = LocalDateTime.now();
@@ -39,25 +41,27 @@ public class HoaDonDAO {
             for (HoadonLinhkien item : slist) {
                 tongTien += item.getThanhTien();
                 if (j != 0) {
-                    sql2.append(", (?, ?, ?, ?, ?)");
+                    sql.append(", (?, ?, ?, ?, ?)");
                 }
                 j += 1;
             }
-            sql2.append(";");
+            sql.append(";");
 
             prepar.setString(1, dtf.format(now));
             prepar.setFloat(2, tongTien);
             prepar.setFloat(3, 1);
             prepar.setFloat(4, nhanVienID);
             prepar.setFloat(5, nhaCungCapID);
+
             row = prepar.executeUpdate();
+
             if (row == 1) {
                 Statement stmt = connect.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT @@IDENTITY");
                 while (rs.next()) {
                     row = rs.getInt(1);
                 }
-                prepar = connect.prepareStatement(sql2.toString());
+                prepar = connect.prepareStatement(sql.toString());
                 int i = 0;
                 for (HoadonLinhkien item : slist) {
                     prepar.setFloat((5 * i) + 1, item.getDonGia());
@@ -75,5 +79,4 @@ public class HoaDonDAO {
         }
         return row;
     }
-
 }

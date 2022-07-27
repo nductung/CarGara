@@ -165,18 +165,19 @@ public class SearchNhaCungCaprView extends javax.swing.JFrame {
     private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
 
         String key = jTextFieldNhaCungCap.getText();
-        list = nhaCungCapDAO.getNhaCungCap(key);
-        DefaultTableModel model = (DefaultTableModel) this.jTableNhaCungCap.getModel();
-        model.setRowCount(0);
-
         if (key.equals("")) {
             JOptionPane.showMessageDialog(this, "Không được để trống");
-        } else if (list.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Không tìm thấy nhà cung cấp");
         } else {
-            for (NhaCungCap nhaCungCap : list) {
-                model.addRow(new Object[]{
-                    nhaCungCap.getMa(), nhaCungCap.getTen(), nhaCungCap.getDiaChi(), nhaCungCap.getEmail(), nhaCungCap.getDienThoai(), nhaCungCap.getMoTa()});
+            list = nhaCungCapDAO.getNhaCungCap(key);
+            DefaultTableModel model = (DefaultTableModel) this.jTableNhaCungCap.getModel();
+            model.setRowCount(0);
+            if (list.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Không tìm thấy nhà cung cấp");
+            } else {
+                for (NhaCungCap nhaCungCap : list) {
+                    model.addRow(new Object[]{
+                        nhaCungCap.getMa(), nhaCungCap.getTen(), nhaCungCap.getDiaChi(), nhaCungCap.getEmail(), nhaCungCap.getDienThoai(), nhaCungCap.getMoTa()});
+                }
             }
         }
     }//GEN-LAST:event_jButtonSearchActionPerformed

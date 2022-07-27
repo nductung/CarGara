@@ -18,15 +18,15 @@ import java.sql.SQLException;
  */
 public class NhanvienDAO {
 
-    public Nhanvien checkLogin(String account, String pass) {
+    public Nhanvien checkLogin(String username, String password) {
         String sql = "SELECT * FROM NhanVien WHERE username = ? AND password = ?";
         Connection connect = null;
         Nhanvien nhanvien = null;
         try {
             connect = DatabaseConnect.getInstance().getConnection();
             PreparedStatement prepar = connect.prepareStatement(sql);
-            prepar.setString(1, account);
-            prepar.setString(2, pass);
+            prepar.setString(1, username);
+            prepar.setString(2, password);
             ResultSet rs = prepar.executeQuery();
             if (rs.next()) {
                 nhanvien = new Nhanvien();

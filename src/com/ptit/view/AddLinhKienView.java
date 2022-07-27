@@ -163,7 +163,6 @@ public class AddLinhKienView extends javax.swing.JFrame {
 
     private void jTextFieldMaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMaActionPerformed
         // TODO add your handling code here:
-
     }//GEN-LAST:event_jTextFieldMaActionPerformed
 
     private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
@@ -184,10 +183,6 @@ public class AddLinhKienView extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, "Đã thêm vào cơ sở dữ liệu");
                 this.setVisible(false);
-//                customer.setCustomerID(row);
-//                CustomerView customerView = new CustomerView(customer);
-//                customerView.setVisible(true);
-//                customerView.setTitle("Thông tin khách hàng");
                 SearchLinhKienView searchLinhKienView = new SearchLinhKienView(nhanvien, nhaCungCap, slist);
                 searchLinhKienView.setVisible(true);
                 searchLinhKienView.setTitle("Linh kiện");

@@ -21,6 +21,33 @@ import java.util.List;
  */
 public class NhaCungCapDAO {
 
+    public List<NhaCungCap> getNhaCungCap(String key) {
+        List<NhaCungCap> nhaCungCaps = null;
+        String sql = "SELECT * FROM NhaCungCap WHERE LOWER( ten ) LIKE  '%" + key + "%'";
+        Connection connect = null;
+        try {
+            connect = DatabaseConnect.getInstance().getConnection();
+            Statement stmt = connect.createStatement();
+            nhaCungCaps = new ArrayList<>();
+            ResultSet rs = stmt.executeQuery(sql);
+            NhaCungCap nhaCungCap = null;
+            while (rs.next()) {
+                nhaCungCap = new NhaCungCap();
+                nhaCungCap.setID(rs.getInt(1));
+                nhaCungCap.setMa(rs.getString(2));
+                nhaCungCap.setTen(rs.getString(3));
+                nhaCungCap.setDiaChi(rs.getString(4));
+                nhaCungCap.setEmail(rs.getString(5));
+                nhaCungCap.setDienThoai(rs.getString(6));
+                nhaCungCap.setMoTa(rs.getString(7));
+                nhaCungCaps.add(nhaCungCap);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return nhaCungCaps;
+    }
+
     public int createNhaCungCap(NhaCungCap nhaCungCap) {
         Connection connect = null;
         int row = 0;
@@ -54,32 +81,5 @@ public class NhaCungCapDAO {
             row = 0;
         }
         return row;
-    }
-
-    public List<NhaCungCap> getNhaCungCap(String key) {
-        List<NhaCungCap> nhaCungCaps = null;
-        String sql = "SELECT * FROM NhaCungCap WHERE LOWER( ten ) LIKE  '%" + key + "%'";
-        Connection connect = null;
-        try {
-            connect = DatabaseConnect.getInstance().getConnection();
-            Statement stmt = connect.createStatement();
-            nhaCungCaps = new ArrayList<NhaCungCap>();
-            ResultSet rs = stmt.executeQuery(sql);
-            NhaCungCap nhaCungCap = null;
-            while (rs.next()) {
-                nhaCungCap = new NhaCungCap();
-                nhaCungCap.setID(rs.getInt(1));
-                nhaCungCap.setMa(rs.getString(2));
-                nhaCungCap.setTen(rs.getString(3));
-                nhaCungCap.setDiaChi(rs.getString(4));
-                nhaCungCap.setEmail(rs.getString(5));
-                nhaCungCap.setDienThoai(rs.getString(6));
-                nhaCungCap.setMoTa(rs.getString(7));
-                nhaCungCaps.add(nhaCungCap);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return nhaCungCaps;
     }
 }

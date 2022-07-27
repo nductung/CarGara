@@ -22,8 +22,8 @@ public class LoginView extends javax.swing.JFrame {
      */
     public LoginView() {
         initComponents();
-        this.setLocationRelativeTo(null);
         nhanVienDAO = new NhanvienDAO();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -44,7 +44,7 @@ public class LoginView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelUsername.setText("Email");
+        jLabelUsername.setText("Tên đăng nhập");
 
         jLabelPassword.setText("Mật khẩu");
 
@@ -82,7 +82,7 @@ public class LoginView extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jTextFieldUsername)
                         .addComponent(jTextFieldPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,15 +129,15 @@ public class LoginView extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldPasswordActionPerformed
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
-
-        String account = jTextFieldUsername.getText();
-        String pass = jTextFieldPassword.getText();
-        if ("".equals(account)) {
+        // TODO add your handling code here:
+        String username = jTextFieldUsername.getText();
+        String password = jTextFieldPassword.getText();
+        if ("".equals(username)) {
             JOptionPane.showMessageDialog(this, "Tên đăng nhập không được để trống");
-        } else if ("".equals(pass)) {
+        } else if ("".equals(password)) {
             JOptionPane.showMessageDialog(this, "Mật khẩu không được để trống");
         } else {
-            Nhanvien nhanvien = nhanVienDAO.checkLogin(account, pass);
+            Nhanvien nhanvien = nhanVienDAO.checkLogin(username, password);
             if (nhanvien == null) {
                 JOptionPane.showMessageDialog(this, "Sai thông tin đăng nhập!");
             } else {
@@ -153,32 +153,6 @@ public class LoginView extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
