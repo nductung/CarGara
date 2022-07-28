@@ -10,7 +10,6 @@ import com.ptit.model.HoadonLinhkien;
 import com.ptit.model.NhaCungCap;
 import com.ptit.model.Nhanvien;
 import com.ptit.view.hoadon.HoaDonView;
-import com.ptit.view.hoadon.HoaDonView;
 import com.ptit.view.user.HomePageView;
 import java.util.ArrayList;
 import java.util.List;

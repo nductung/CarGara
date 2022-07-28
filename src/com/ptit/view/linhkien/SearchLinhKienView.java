@@ -11,7 +11,6 @@ import com.ptit.model.LinhKien;
 import com.ptit.model.NhaCungCap;
 import com.ptit.model.Nhanvien;
 import com.ptit.view.hoadon.HoaDonView;
-import com.ptit.view.hoadon.HoaDonView;
 import java.util.List;
 import java.util.Objects;
 import javax.swing.JOptionPane;

@@ -8,7 +8,6 @@ package com.ptit.view.nhacungcap;
 import com.ptit.dao.NhaCungCapDAO;
 import com.ptit.model.NhaCungCap;
 import com.ptit.model.Nhanvien;
-import com.ptit.utility.Validation;
 import javax.swing.JOptionPane;
 
 /**
@@ -203,7 +202,7 @@ public class AddNhaCungCapView extends javax.swing.JFrame {
         nhaCungCap.setDienThoai(jTextFieldDienThoai.getText());
         nhaCungCap.setMoTa(jTextAreaMoTa.getText());
 
-        if (Validation.isCustomerValid(nhaCungCap)) {
+        if (isNhaCungCapValid(nhaCungCap)) {
             int row = nhaCungCapDAO.createNhaCungCap(nhaCungCap);
             if (row == 0) {
                 JOptionPane.showMessageDialog(this, "Đã xảy ra lỗi");
@@ -218,6 +217,25 @@ public class AddNhaCungCapView extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButtonAddActionPerformed
+
+    public static boolean isNhaCungCapValid(NhaCungCap ncc) {
+        if (isStringValid(ncc.getMa()) && isStringValid(ncc.getDiaChi()) && isStringValid(ncc.getDienThoai()) && isStringValid(ncc.getEmail()) && isStringValid(ncc.getTen())) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isStringValid(String str) {
+        if (str.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Không được để trống thông tin!", "Thông báo", 1);
+            return false;
+        }
+        if (str.length() > 255) {
+            JOptionPane.showMessageDialog(null, "Không được quá 255 kí tự!", "Thông báo", 1);
+            return false;
+        }
+        return true;
+    }
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
         // TODO add your handling code here:

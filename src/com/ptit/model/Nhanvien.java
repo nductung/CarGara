@@ -33,7 +33,7 @@ public class Nhanvien {
     public void setID(int id) {
         this.id = id;
     }
-    
+
     public String getTen() {
         return ten;
     }
@@ -41,7 +41,7 @@ public class Nhanvien {
     public void setTen(String ten) {
         this.ten = ten;
     }
-    
+
     public String getUsername() {
         return username;
     }
@@ -49,7 +49,7 @@ public class Nhanvien {
     public void setUsername(String username) {
         this.username = username;
     }
-    
+
     public String getPassword() {
         return password;
     }
@@ -57,6 +57,5 @@ public class Nhanvien {
     public void setPassword(String password) {
         this.password = password;
     }
-
 
 }

@@ -10,7 +10,6 @@ import com.ptit.model.HoadonLinhkien;
 import com.ptit.model.LinhKien;
 import com.ptit.model.NhaCungCap;
 import com.ptit.model.Nhanvien;
-import com.ptit.utility.Validation;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -174,7 +173,7 @@ public class AddLinhKienView extends javax.swing.JFrame {
         linhKien.setNhaCungCapID(nhaCungCap.getID());
         linhKien.setHang(jTextFieldHang.getText());
 
-        if (Validation.isLinhKienValid(linhKien)) {
+        if (isLinhKienValid(linhKien)) {
             int row = linhKienDAO.createLinhKien(linhKien);
             if (row == 0) {
                 JOptionPane.showMessageDialog(this, "Đã xảy ra lỗi");
@@ -189,6 +188,25 @@ public class AddLinhKienView extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButtonAddActionPerformed
+
+    public static boolean isLinhKienValid(LinhKien lk) {
+        if (isStringValid(lk.getMa()) && isStringValid(lk.getTen()) && isStringValid(lk.getDonVi()) && isStringValid(lk.getHang())) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isStringValid(String str) {
+        if (str.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Không được để trống thông tin!", "Thông báo", 1);
+            return false;
+        }
+        if (str.length() > 255) {
+            JOptionPane.showMessageDialog(null, "Không được quá 255 kí tự!", "Thông báo", 1);
+            return false;
+        }
+        return true;
+    }
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
         // TODO add your handling code here:

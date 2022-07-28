@@ -70,7 +70,7 @@ public class LinhKien {
     public void setNhaCungCapID(int nhaCungCapID) {
         this.nhaCungCapID = nhaCungCapID;
     }
-    
+
     public String getHang() {
         return hang;
     }
