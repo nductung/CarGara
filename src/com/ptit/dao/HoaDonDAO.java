@@ -26,6 +26,9 @@ public class HoaDonDAO extends DAO {
             StringBuilder sql = new StringBuilder("INSERT INTO HoadonLinhkien (donGia, soLuong, thanhTien, hoaDonID, linhKienID) VALUES (?,?,?,?,?)");
 
             String sql2 = "INSERT INTO HoaDon VALUES(?,?,?,?,?)";
+
+            connect.setAutoCommit(false);
+
             PreparedStatement prepar = connect.prepareStatement(sql2);
 
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -68,7 +71,14 @@ public class HoaDonDAO extends DAO {
                 }
                 row = prepar.executeUpdate();
             }
+            connect.commit();
         } catch (SQLException e) {
+            try {
+                connect.rollback();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                row = 0;
+            }
             e.printStackTrace();
             row = 0;
         }
