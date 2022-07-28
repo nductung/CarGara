@@ -5,9 +5,7 @@
  */
 package com.ptit.dao;
 
-import com.ptit.connect.DatabaseConnect;
 import com.ptit.model.LinhKien;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +17,7 @@ import java.util.List;
  *
  * @author TUNGND
  */
-public class LinhKienDAO {
+public class LinhKienDAO extends DAO {
 
     public List<LinhKien> getLinhKien(int nhaCungCapID, String key) {
         List<LinhKien> linhKiens = null;
@@ -29,9 +27,7 @@ public class LinhKienDAO {
         } else {
             sql = "SELECT * FROM LinhKien WHERE nhaCungCapID = " + nhaCungCapID + " AND LOWER( ten ) LIKE  '%" + key + "%'";
         }
-        Connection connect;
         try {
-            connect = DatabaseConnect.getInstance().getConnection();
             Statement stmt = connect.createStatement();
             linhKiens = new ArrayList<>();
             ResultSet rs = stmt.executeQuery(sql);
@@ -52,10 +48,8 @@ public class LinhKienDAO {
     }
 
     public int createLinhKien(LinhKien linhKien) {
-        Connection connect = null;
         int row = 0;
         try {
-            connect = DatabaseConnect.getInstance().getConnection();
             String check = "SELECT * FROM LinhKien WHERE nhaCungCapID = " + linhKien.getNhaCungCapID() + " AND LOWER( ma ) = '" + linhKien.getMa() + "'";
             Statement stmt = connect.createStatement();
             ResultSet rs = stmt.executeQuery(check);

@@ -5,7 +5,6 @@
  */
 package com.ptit.dao;
 
-import com.ptit.connect.DatabaseConnect;
 import com.ptit.model.Car;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -76,7 +75,7 @@ public class CarDAOTest {
         Connection connect = null;
         int result = 0;
         try {
-            connect = DatabaseConnect.getInstance().getConnection();
+            connect = DAO.getInstance().getConnection();
             connect.setAutoCommit(false); 
             String sql = "INSERT INTO Car VALUES(?,?,?,?,?)";
             PreparedStatement prepar = connect.prepareStatement(sql);

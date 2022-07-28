@@ -5,9 +5,7 @@
  */
 package com.ptit.dao;
 
-import com.ptit.connect.DatabaseConnect;
 import com.ptit.model.Nhanvien;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,14 +14,12 @@ import java.sql.SQLException;
  *
  * @author TUNGND
  */
-public class NhanvienDAO {
+public class NhanvienDAO extends DAO {
 
     public Nhanvien checkLogin(String username, String password) {
         String sql = "SELECT * FROM NhanVien WHERE username = ? AND password = ?";
-        Connection connect = null;
         Nhanvien nhanvien = null;
         try {
-            connect = DatabaseConnect.getInstance().getConnection();
             PreparedStatement prepar = connect.prepareStatement(sql);
             prepar.setString(1, username);
             prepar.setString(2, password);

@@ -5,6 +5,7 @@
  */
 package com.ptit.connect;
 
+import com.ptit.dao.DAO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -48,7 +49,7 @@ public class DatabaseConnectTest {
     @Test
     public void testGetConnection() {
         System.out.println("getConnection");
-        DatabaseConnect instance = new DatabaseConnect();
+        DAO instance = new DAO();
         boolean expResult = true;
         Connection connection = instance.getConnection();
         boolean result = false;
@@ -65,7 +66,7 @@ public class DatabaseConnectTest {
     public void testGetInstance() throws Exception {
         System.out.println("getInstance");
         boolean expResult = true;
-        DatabaseConnect databaseConnect = DatabaseConnect.getInstance();
+        DAO databaseConnect = DAO.getInstance();
         boolean result = false;
         if (databaseConnect != null) {
             result = true;

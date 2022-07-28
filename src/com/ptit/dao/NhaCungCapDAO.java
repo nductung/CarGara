@@ -5,9 +5,7 @@
  */
 package com.ptit.dao;
 
-import com.ptit.connect.DatabaseConnect;
 import com.ptit.model.NhaCungCap;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +17,7 @@ import java.util.List;
  *
  * @author TUNGND
  */
-public class NhaCungCapDAO {
+public class NhaCungCapDAO extends DAO {
 
     public List<NhaCungCap> getNhaCungCap(String key) {
         List<NhaCungCap> nhaCungCaps = null;
@@ -29,9 +27,7 @@ public class NhaCungCapDAO {
         } else {
             sql = "SELECT * FROM NhaCungCap WHERE LOWER( ten ) LIKE  '%" + key + "%'";
         }
-        Connection connect;
         try {
-            connect = DatabaseConnect.getInstance().getConnection();
             Statement stmt = connect.createStatement();
             nhaCungCaps = new ArrayList<>();
             ResultSet rs = stmt.executeQuery(sql);
@@ -54,10 +50,8 @@ public class NhaCungCapDAO {
     }
 
     public int createNhaCungCap(NhaCungCap nhaCungCap) {
-        Connection connect;
         int row = 0;
         try {
-            connect = DatabaseConnect.getInstance().getConnection();
             String check = "SELECT * FROM NhaCungCap WHERE LOWER( ma ) = '" + nhaCungCap.getMa() + "'";
             Statement stmt = connect.createStatement();
             ResultSet rs = stmt.executeQuery(check);

@@ -5,9 +5,7 @@
  */
 package com.ptit.dao;
 
-import com.ptit.connect.DatabaseConnect;
 import com.ptit.model.HoadonLinhkien;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,14 +18,11 @@ import java.util.List;
  *
  * @author TUNGND
  */
-public class HoaDonDAO {
+public class HoaDonDAO extends DAO {
 
     public int createHoaDon(int nhanVienID, int nhaCungCapID, List<HoadonLinhkien> slist) {
-        Connection connect = null;
         int row = 0;
         try {
-            connect = DatabaseConnect.getInstance().getConnection();
-
             StringBuilder sql = new StringBuilder("INSERT INTO HoadonLinhkien (donGia, soLuong, thanhTien, hoaDonID, linhKienID) VALUES (?,?,?,?,?)");
 
             String sql2 = "INSERT INTO HoaDon VALUES(?,?,?,?,?)";

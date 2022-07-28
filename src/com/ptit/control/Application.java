@@ -5,7 +5,7 @@
  */
 package com.ptit.control;
 
-import com.ptit.view.LoginView;
+import com.ptit.view.user.LoginView;
 
 /**
  *

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ptit.view;
+package com.ptit.view.linhkien;
 
 import com.ptit.dao.LinhKienDAO;
 import com.ptit.model.HoadonLinhkien;

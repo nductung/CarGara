@@ -5,7 +5,6 @@
  */
 package com.ptit.dao;
 
-import com.ptit.connect.DatabaseConnect;
 import com.ptit.model.Technician;
 import java.sql.Connection;
 import java.sql.ResultSet;

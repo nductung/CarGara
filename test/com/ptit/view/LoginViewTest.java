@@ -5,6 +5,7 @@
  */
 package com.ptit.view;
 
+import com.ptit.view.user.LoginView;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

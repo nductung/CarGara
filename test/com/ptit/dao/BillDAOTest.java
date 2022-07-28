@@ -5,7 +5,6 @@
  */
 package com.ptit.dao;
 
-import com.ptit.connect.DatabaseConnect;
 import com.ptit.model.Bill;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -57,7 +56,7 @@ public class BillDAOTest {
         Connection connect = null;
         int result = 0;
         try {
-            connect = DatabaseConnect.getInstance().getConnection();
+            connect = DAO.getInstance().getConnection();
             connect.setAutoCommit(false);
             String sql = "INSERT INTO Bill VALUES(?,?,?)";
             PreparedStatement prepar = connect.prepareStatement(sql);
@@ -92,7 +91,7 @@ public class BillDAOTest {
         Connection connect = null;
         int result = 0;
         try {
-            connect = DatabaseConnect.getInstance().getConnection();
+            connect = DAO.getInstance().getConnection();
             connect.setAutoCommit(false);
             String sql = "UPDATE Bill SET totalMoney = ? WHERE billID = ?";
             PreparedStatement prepar = connect.prepareStatement(sql);

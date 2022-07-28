@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ptit.view;
+package com.ptit.view.user;
 
+import com.ptit.view.nhacungcap.SearchNhaCungCaprView;
 import com.ptit.model.Nhanvien;
 
 /**

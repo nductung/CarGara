@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ptit.view;
+package com.ptit.view.hoadon;
 
+import com.ptit.view.user.HomePageView;
+import com.ptit.view.nhacungcap.SearchNhaCungCaprView;
+import com.ptit.view.linhkien.SearchLinhKienView;
 import com.ptit.dao.HoaDonDAO;
 import com.ptit.model.HoadonLinhkien;
 import com.ptit.model.NhaCungCap;
@@ -114,7 +117,7 @@ public class HoaDonView extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
