@@ -76,10 +76,10 @@ public class HoaDonDAO extends DAO {
             try {
                 connect.rollback();
             } catch (Exception ex) {
-                ex.printStackTrace();
-                row = 0;
+                // ex.printStackTrace();
+                // row = 0;
             }
-            e.printStackTrace();
+            // e.printStackTrace();
             row = 0;
         }
         return row;

@@ -65,15 +65,15 @@ public class LinhKienDAO extends DAO {
                 prepar.setString(5, linhKien.getHang());
                 row = prepar.executeUpdate();
                 if (row == 1) {
-                    stmt = connect.createStatement();
-                    rs = stmt.executeQuery("SELECT @@IDENTITY");
-                    while (rs.next()) {
-                        row = rs.getInt(1);
-                    }
+                    // stmt = connect.createStatement();
+                    // rs = stmt.executeQuery("SELECT @@IDENTITY");
+                    // while (rs.next()) {
+                    //     row = rs.getInt(1);
+                    // }
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            // e.printStackTrace();
             row = 0;
         }
         return row;
