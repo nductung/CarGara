@@ -23,14 +23,19 @@ public class NhaCungCapDAO {
 
     public List<NhaCungCap> getNhaCungCap(String key) {
         List<NhaCungCap> nhaCungCaps = null;
-        String sql = "SELECT * FROM NhaCungCap WHERE LOWER( ten ) LIKE  '%" + key + "%'";
-        Connection connect = null;
+        String sql;
+        if (key.isEmpty()) {
+            sql = "SELECT * FROM NhaCungCap";
+        } else {
+            sql = "SELECT * FROM NhaCungCap WHERE LOWER( ten ) LIKE  '%" + key + "%'";
+        }
+        Connection connect;
         try {
             connect = DatabaseConnect.getInstance().getConnection();
             Statement stmt = connect.createStatement();
             nhaCungCaps = new ArrayList<>();
             ResultSet rs = stmt.executeQuery(sql);
-            NhaCungCap nhaCungCap = null;
+            NhaCungCap nhaCungCap;
             while (rs.next()) {
                 nhaCungCap = new NhaCungCap();
                 nhaCungCap.setID(rs.getInt(1));
@@ -49,7 +54,7 @@ public class NhaCungCapDAO {
     }
 
     public int createNhaCungCap(NhaCungCap nhaCungCap) {
-        Connection connect = null;
+        Connection connect;
         int row = 0;
         try {
             connect = DatabaseConnect.getInstance().getConnection();

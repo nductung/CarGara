@@ -23,14 +23,19 @@ public class LinhKienDAO {
 
     public List<LinhKien> getLinhKien(int nhaCungCapID, String key) {
         List<LinhKien> linhKiens = null;
-        String sql = "SELECT * FROM LinhKien WHERE nhaCungCapID = " + nhaCungCapID + " AND LOWER( ten ) LIKE  '%" + key + "%'";
-        Connection connect = null;
+        String sql;
+        if (key.isEmpty()) {
+            sql = "SELECT * FROM LinhKien WHERE nhaCungCapID = " + nhaCungCapID + "";
+        } else {
+            sql = "SELECT * FROM LinhKien WHERE nhaCungCapID = " + nhaCungCapID + " AND LOWER( ten ) LIKE  '%" + key + "%'";
+        }
+        Connection connect;
         try {
             connect = DatabaseConnect.getInstance().getConnection();
             Statement stmt = connect.createStatement();
             linhKiens = new ArrayList<>();
             ResultSet rs = stmt.executeQuery(sql);
-            LinhKien linhKien = null;
+            LinhKien linhKien;
             while (rs.next()) {
                 linhKien = new LinhKien();
                 linhKien.setID(rs.getInt(1));

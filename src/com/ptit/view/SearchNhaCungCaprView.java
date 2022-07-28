@@ -11,7 +11,7 @@ import com.ptit.model.NhaCungCap;
 import com.ptit.model.Nhanvien;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -31,6 +31,9 @@ public class SearchNhaCungCaprView extends javax.swing.JFrame {
         initComponents();
         nhanvien = nv;
         nhaCungCapDAO = new NhaCungCapDAO();
+
+        getNhaCungCap("");
+
         this.setLocationRelativeTo(null);
     }
 
@@ -165,22 +168,27 @@ public class SearchNhaCungCaprView extends javax.swing.JFrame {
     private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
 
         String key = jTextFieldNhaCungCap.getText();
-        if (key.equals("")) {
-            JOptionPane.showMessageDialog(this, "Không được để trống");
-        } else {
-            list = nhaCungCapDAO.getNhaCungCap(key);
-            DefaultTableModel model = (DefaultTableModel) this.jTableNhaCungCap.getModel();
-            model.setRowCount(0);
-            if (list.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Không tìm thấy nhà cung cấp");
+        getNhaCungCap(key);
+    }//GEN-LAST:event_jButtonSearchActionPerformed
+
+    private void getNhaCungCap(String key) {
+        list = nhaCungCapDAO.getNhaCungCap(key);
+        DefaultTableModel model = (DefaultTableModel) this.jTableNhaCungCap.getModel();
+        model.setRowCount(0);
+        if (list.isEmpty()) {
+            if (key.isEmpty()) {
+
             } else {
-                for (NhaCungCap nhaCungCap : list) {
-                    model.addRow(new Object[]{
-                        nhaCungCap.getMa(), nhaCungCap.getTen(), nhaCungCap.getDiaChi(), nhaCungCap.getEmail(), nhaCungCap.getDienThoai(), nhaCungCap.getMoTa()});
-                }
+                model.addRow(new Object[]{
+                    "Không có dữ liệu", "", "", "", "", ""});
+            }
+        } else {
+            for (NhaCungCap nhaCungCap : list) {
+                model.addRow(new Object[]{
+                    nhaCungCap.getMa(), nhaCungCap.getTen(), nhaCungCap.getDiaChi(), nhaCungCap.getEmail(), nhaCungCap.getDienThoai(), nhaCungCap.getMoTa()});
             }
         }
-    }//GEN-LAST:event_jButtonSearchActionPerformed
+    }
 
     private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
         // TODO add your handling code here:
@@ -192,13 +200,16 @@ public class SearchNhaCungCaprView extends javax.swing.JFrame {
 
     private void jTableNhaCungCapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableNhaCungCapMouseClicked
         // TODO add your handling code here:      
-        int index = jTableNhaCungCap.getSelectedRow();
-        NhaCungCap ncc = list.get(index);
-        this.setVisible(false);
-        List<HoadonLinhkien> slist = new ArrayList<>();
-        HoaDonView hoaDonView = new HoaDonView(nhanvien, ncc, slist);
-        hoaDonView.setVisible(true);
-        hoaDonView.setTitle("Thông tin hoá đơn");
+        if (list.isEmpty()) {
+        } else {
+            int index = jTableNhaCungCap.getSelectedRow();
+            NhaCungCap ncc = list.get(index);
+            this.setVisible(false);
+            List<HoadonLinhkien> slist = new ArrayList<>();
+            HoaDonView hoaDonView = new HoaDonView(nhanvien, ncc, slist);
+            hoaDonView.setVisible(true);
+            hoaDonView.setTitle("Thông tin hoá đơn");
+        }
     }//GEN-LAST:event_jTableNhaCungCapMouseClicked
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed

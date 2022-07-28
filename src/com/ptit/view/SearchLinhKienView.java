@@ -38,6 +38,9 @@ public class SearchLinhKienView extends javax.swing.JFrame {
         linhKienDAO = new LinhKienDAO();
         nhaCungCap = ncc;
         slist = listHoadonLinhkien;
+
+        getLinhKien("");
+
         this.setLocationRelativeTo(null);
     }
 
@@ -226,16 +229,21 @@ public class SearchLinhKienView extends javax.swing.JFrame {
 
     private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
         showXacNhan(false);
-
         String key = jTextFieldTenLinhKien.getText();
+        getLinhKien(key);
+    }//GEN-LAST:event_jButtonSearchActionPerformed
+
+    private void getLinhKien(String key) {
         list = linhKienDAO.getLinhKien(nhaCungCap.getID(), key);
         DefaultTableModel model = (DefaultTableModel) this.jTableDSLK.getModel();
         model.setRowCount(0);
+        if (list.isEmpty()) {
+            if (key.isEmpty()) {
 
-        if (key.equals("")) {
-            JOptionPane.showMessageDialog(this, "Không được để trống");
-        } else if (list.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Không tìm thấy linh kiện");
+            } else {
+                model.addRow(new Object[]{
+                    "Không có dữ liệu", "", "", ""});
+            }
         } else {
             for (LinhKien linhKien : list) {
                 model.addRow(new Object[]{
@@ -243,7 +251,7 @@ public class SearchLinhKienView extends javax.swing.JFrame {
                 });
             }
         }
-    }//GEN-LAST:event_jButtonSearchActionPerformed
+    }
 
     private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
         // TODO add your handling code here:
@@ -255,10 +263,13 @@ public class SearchLinhKienView extends javax.swing.JFrame {
 
     private void jTableDSLKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableDSLKMouseClicked
         // TODO add your handling code here:   
-        showXacNhan(true);
-        int index = jTableDSLK.getSelectedRow();
-        selected = list.get(index);
-        this.jLabelGetLSMa.setText(selected.getMa());
+        if (list.isEmpty()) {
+        } else {
+            showXacNhan(true);
+            int index = jTableDSLK.getSelectedRow();
+            selected = list.get(index);
+            this.jLabelGetLSMa.setText(selected.getMa());
+        }
     }//GEN-LAST:event_jTableDSLKMouseClicked
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
