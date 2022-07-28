@@ -59,13 +59,13 @@ public class AddNhaCungCapView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelMa.setText("Mã");
+        jLabelMa.setText("Mã*");
 
-        jLabelTen.setText("Tên");
+        jLabelTen.setText("Tên*");
 
-        jLabelDiaChi.setText("Địa chỉ");
+        jLabelDiaChi.setText("Địa chỉ*");
 
-        jLabelEmail.setText("Email");
+        jLabelEmail.setText("Email*");
 
         jTextFieldMa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,7 +99,7 @@ public class AddNhaCungCapView extends javax.swing.JFrame {
         jTextAreaMoTa.setRows(5);
         jScrollPane2.setViewportView(jTextAreaMoTa);
 
-        jLabelDienThoai.setText("SĐT");
+        jLabelDienThoai.setText("SĐT*");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -131,7 +131,7 @@ public class AddNhaCungCapView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButtonAdd))
                             .addComponent(jTextFieldDienThoai, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap(128, Short.MAX_VALUE))))
+                        .addContainerGap(123, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -61,11 +61,11 @@ public class AddLinhKienView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelMa.setText("Mã");
+        jLabelMa.setText("Mã*");
 
-        jLabelTen.setText("Tên");
+        jLabelTen.setText("Tên*");
 
-        jLabelDonVi.setText("Đơn vị");
+        jLabelDonVi.setText("Đơn vị*");
 
         jTextFieldMa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,14 +87,14 @@ public class AddLinhKienView extends javax.swing.JFrame {
             }
         });
 
-        jLabelHang.setText("Hãng");
+        jLabelHang.setText("Hãng*");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(0, 58, Short.MAX_VALUE)
+                .addGap(0, 56, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabelDonVi, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelHang, javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,7 +112,7 @@ public class AddLinhKienView extends javax.swing.JFrame {
                             .addComponent(jTextFieldMa, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextFieldHang, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextFieldDonVi, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

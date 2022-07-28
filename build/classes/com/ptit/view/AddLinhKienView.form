@@ -47,7 +47,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="58" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="56" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jLabelDonVi" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabelHang" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -70,7 +70,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="90" max="32767" attributes="0"/>
+                  <EmptySpace pref="87" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -110,17 +110,17 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabelMa">
           <Properties>
-            <Property name="text" type="java.lang.String" value="M&#xe3;"/>
+            <Property name="text" type="java.lang.String" value="M&#xe3;*"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelTen">
           <Properties>
-            <Property name="text" type="java.lang.String" value="T&#xea;n"/>
+            <Property name="text" type="java.lang.String" value="T&#xea;n*"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelDonVi">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x110;&#x1a1;n v&#x1ecb;"/>
+            <Property name="text" type="java.lang.String" value="&#x110;&#x1a1;n v&#x1ecb;*"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldMa">
@@ -150,7 +150,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelHang">
           <Properties>
-            <Property name="text" type="java.lang.String" value="H&#xe3;ng"/>
+            <Property name="text" type="java.lang.String" value="H&#xe3;ng*"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldHang">
