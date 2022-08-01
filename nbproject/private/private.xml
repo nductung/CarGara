@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/test/com/ptit/dao/TestHoaDonDAO.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/linhkien/SearchLinhKienView.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/nhacungcap/AddNhaCungCapView.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/user/LoginView.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/hoadon/HoaDonView.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/user/HomePageView.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/nhacungcap/SearchNhaCungCaprView.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/linhkien/AddLinhKienView.java</file>
+        </group>
     </open-files>
 </project-private>
