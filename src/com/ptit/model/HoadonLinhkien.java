@@ -38,7 +38,6 @@ public class HoadonLinhkien {
         this.ID = ID;
     }
 
-
     public Float getDonGia() {
         return donGia;
     }

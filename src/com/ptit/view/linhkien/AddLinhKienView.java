@@ -170,7 +170,7 @@ public class AddLinhKienView extends javax.swing.JFrame {
         linhKien.setMa(jTextFieldMa.getText());
         linhKien.setTen(jTextFieldTen.getText());
         linhKien.setDonVi(jTextFieldDonVi.getText());
-        linhKien.setNhaCungCapID(nhaCungCap);
+        linhKien.setNhaCungCap(nhaCungCap);
         linhKien.setHang(jTextFieldHang.getText());
 
         if (isLinhKienValid(linhKien)) {

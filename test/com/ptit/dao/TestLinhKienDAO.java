@@ -6,6 +6,7 @@
 package com.ptit.dao;
 
 import com.ptit.model.LinhKien;
+import com.ptit.model.NhaCungCap;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -41,13 +42,13 @@ public class TestLinhKienDAO {
 
     @Test
     public void createLinhKien_ThieuTruongDuLieu() {
-        int nhaCungCapID = 1;
+        NhaCungCap nhaCungCap = new NhaCungCap(1, "N01", "Fina", "Ha Noi", "fina@gmail.com", "0111111", "");
 
         LinhKien input = new LinhKien();
         input.setMa(null);
         input.setTen("Ten");
         input.setDonVi("DonVi");
-        input.setNhaCungCapID(nhaCungCapID);
+        input.setNhaCungCap(nhaCungCap);
         input.setHang("Hang");
 
         int f = 0;
@@ -58,13 +59,13 @@ public class TestLinhKienDAO {
 
     @Test
     public void createNhaCungCap_TrungMa() {
-        int nhaCungCapID = 1;
+        NhaCungCap nhaCungCap = new NhaCungCap(1, "N01", "Fina", "Ha Noi", "fina@gmail.com", "0111111", "");
 
         LinhKien input = new LinhKien();
         input.setMa("L01");
         input.setTen("Ten");
         input.setDonVi("DonVi");
-        input.setNhaCungCapID(nhaCungCapID);
+        input.setNhaCungCap(nhaCungCap);
         input.setHang("Hang");
 
         int f = -1;
@@ -75,7 +76,7 @@ public class TestLinhKienDAO {
 
     @Test
     public void createNhaCungCap_NhaCungCapKhongTonTai() {
-        int nhaCungCapID = 1000;
+        NhaCungCap nhaCungCap = new NhaCungCap(1000, "N01", "Fina", "Ha Noi", "fina@gmail.com", "0111111", "");
 
         LinhKien input = new LinhKien();
 
@@ -85,7 +86,7 @@ public class TestLinhKienDAO {
         input.setMa("L" + dtf.format(now));
         input.setTen("Ten");
         input.setDonVi("DonVi");
-        input.setNhaCungCapID(nhaCungCapID);
+        input.setNhaCungCap(nhaCungCap);
         input.setHang("Hang");
 
         int f = 0;
@@ -96,7 +97,7 @@ public class TestLinhKienDAO {
 
     @Test
     public void createNhaCungCap_ThanhCong() {
-        int nhaCungCapID = 1;
+        NhaCungCap nhaCungCap = new NhaCungCap(1, "N01", "Fina", "Ha Noi", "fina@gmail.com", "0111111", "");
 
         LinhKien input = new LinhKien();
 
@@ -106,7 +107,7 @@ public class TestLinhKienDAO {
         input.setMa("L" + dtf.format(now));
         input.setTen("Ten");
         input.setDonVi("DonVi");
-        input.setNhaCungCapID(nhaCungCapID);
+        input.setNhaCungCap(nhaCungCap);
         input.setHang("Hang");
 
         int f = 1;

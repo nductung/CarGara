@@ -67,7 +67,7 @@ public class LinhKien {
         return nhaCungCap;
     }
 
-    public void setNhaCungCapID(NhaCungCap nhaCungCap) {
+    public void setNhaCungCap(NhaCungCap nhaCungCap) {
         this.nhaCungCap = nhaCungCap;
     }
 
