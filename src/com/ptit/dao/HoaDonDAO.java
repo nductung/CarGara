@@ -6,6 +6,8 @@
 package com.ptit.dao;
 
 import com.ptit.model.HoadonLinhkien;
+import com.ptit.model.NhaCungCap;
+import com.ptit.model.Nhanvien;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,7 +22,7 @@ import java.util.List;
  */
 public class HoaDonDAO extends DAO {
 
-    public int createHoaDon(int nhanVienID, int nhaCungCapID, List<HoadonLinhkien> slist) {
+    public int createHoaDon(Nhanvien nhanVien, NhaCungCap nhaCungCap, List<HoadonLinhkien> slist) {
         int row = 0;
         try {
             StringBuilder sql = new StringBuilder("INSERT INTO HoadonLinhkien (donGia, soLuong, thanhTien, hoaDonID, linhKienID) VALUES (?,?,?,?,?)");
@@ -48,8 +50,8 @@ public class HoaDonDAO extends DAO {
             prepar.setString(1, dtf.format(now));
             prepar.setFloat(2, tongTien);
             prepar.setFloat(3, 1);
-            prepar.setFloat(4, nhanVienID);
-            prepar.setFloat(5, nhaCungCapID);
+            prepar.setFloat(4, nhanVien.getID());
+            prepar.setFloat(5, nhaCungCap.getID());
 
             row = prepar.executeUpdate();
 
@@ -66,7 +68,7 @@ public class HoaDonDAO extends DAO {
                     prepar.setInt((5 * i) + 2, item.getSoLuong());
                     prepar.setFloat((5 * i) + 3, item.getThanhTien());
                     prepar.setInt((5 * i) + 4, row);
-                    prepar.setInt((5 * i) + 5, item.getLinhKienID());
+                    prepar.setInt((5 * i) + 5, (item.getLinhKien()).getID());
                     i += 1;
                 }
                 row = prepar.executeUpdate();
@@ -76,10 +78,10 @@ public class HoaDonDAO extends DAO {
             try {
                 connect.rollback();
             } catch (Exception ex) {
-                // ex.printStackTrace();
+                 ex.printStackTrace();
                 // row = 0;
             }
-            // e.printStackTrace();
+             e.printStackTrace();
             row = 0;
         }
         return row;

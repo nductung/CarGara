@@ -15,19 +15,19 @@ public class LinhKien {
     private String ma;
     private String ten;
     private String donVi;
-    private int nhaCungCapID;
+    private NhaCungCap nhaCungCap;
     private String hang;
 
     public LinhKien() {
         super();
     }
 
-    public LinhKien(int ID, String ma, String ten, String donVi, int nhaCungCapID, String hang) {
+    public LinhKien(int ID, String ma, String ten, String donVi, NhaCungCap nhaCungCap, String hang) {
         this.ID = ID;
         this.ma = ma;
         this.ten = ten;
         this.donVi = donVi;
-        this.nhaCungCapID = nhaCungCapID;
+        this.nhaCungCap = nhaCungCap;
         this.hang = hang;
     }
 
@@ -63,12 +63,12 @@ public class LinhKien {
         this.donVi = donVi;
     }
 
-    public int getNhaCungCapID() {
-        return nhaCungCapID;
+    public NhaCungCap getNhaCungCap() {
+        return nhaCungCap;
     }
 
-    public void setNhaCungCapID(int nhaCungCapID) {
-        this.nhaCungCapID = nhaCungCapID;
+    public void setNhaCungCapID(NhaCungCap nhaCungCap) {
+        this.nhaCungCap = nhaCungCap;
     }
 
     public String getHang() {

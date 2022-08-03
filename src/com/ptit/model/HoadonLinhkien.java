@@ -12,28 +12,22 @@ package com.ptit.model;
 public class HoadonLinhkien {
 
     private int ID;
-    private String ma;
-    private String ten;
-    private String hang;
     private Float donGia;
     private int soLuong;
     private Float thanhTien;
-    private int linhKienID;
-    private int hoaDonID;
+    private LinhKien linhKien;
+    private HoaDon hoaDon;
 
     public HoadonLinhkien() {
     }
 
-    public HoadonLinhkien(int ID, String ma, String ten, String hang, Float donGia, int soLuong, Float thanhTien, int linhKienID, int hoaDonID) {
+    public HoadonLinhkien(int ID, float donGia, int soLuong, Float thanhTien, LinhKien linhKien, HoaDon hoaDon) {
         this.ID = ID;
-        this.ma = ma;
-        this.ten = ten;
-        this.hang = hang;
         this.donGia = donGia;
         this.soLuong = soLuong;
         this.thanhTien = thanhTien;
-        this.linhKienID = linhKienID;
-        this.hoaDonID = hoaDonID;
+        this.linhKien = linhKien;
+        this.hoaDon = hoaDon;
     }
 
     public int getID() {
@@ -44,29 +38,6 @@ public class HoadonLinhkien {
         this.ID = ID;
     }
 
-    public String getMa() {
-        return ma;
-    }
-
-    public void setMa(String ma) {
-        this.ma = ma;
-    }
-
-    public String getTen() {
-        return ten;
-    }
-
-    public void setTen(String ten) {
-        this.ten = ten;
-    }
-
-    public String getHang() {
-        return hang;
-    }
-
-    public void setHang(String hang) {
-        this.hang = hang;
-    }
 
     public Float getDonGia() {
         return donGia;
@@ -92,20 +63,20 @@ public class HoadonLinhkien {
         this.thanhTien = thanhTien;
     }
 
-    public int getLinhKienID() {
-        return linhKienID;
+    public LinhKien getLinhKien() {
+        return linhKien;
     }
 
-    public void setLinhKienID(int linhKienID) {
-        this.linhKienID = linhKienID;
+    public void setLinhKien(LinhKien linhKien) {
+        this.linhKien = linhKien;
     }
 
-    public int getHoaDonID() {
-        return hoaDonID;
+    public HoaDon getHoaDon() {
+        return hoaDon;
     }
 
-    public void setHoaDonID(int hoaDonID) {
-        this.hoaDonID = hoaDonID;
+    public void setHoaDon(HoaDon hoaDon) {
+        this.hoaDon = hoaDon;
     }
 
 }

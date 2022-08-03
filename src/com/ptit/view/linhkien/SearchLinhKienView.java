@@ -301,7 +301,7 @@ public class SearchLinhKienView extends javax.swing.JFrame {
             int i = 0;
             int index = -1;
             for (HoadonLinhkien element : slist) {
-                if (Objects.equals(element.getMa(), selected.getMa())) {
+                if (Objects.equals((element.getLinhKien()).getMa(), selected.getMa())) {
                     index = i;
                 }
                 i += 1;
@@ -310,13 +310,15 @@ public class SearchLinhKienView extends javax.swing.JFrame {
                 slist.remove(index);
             }
             HoadonLinhkien item = new HoadonLinhkien();
-            item.setMa(selected.getMa());
-            item.setTen(selected.getTen());
-            item.setHang(selected.getHang());
+            LinhKien linhKien = new LinhKien();
+            linhKien.setID(selected.getID());
+            linhKien.setMa(selected.getMa());
+            linhKien.setTen(selected.getTen());
+            linhKien.setHang(selected.getHang());
             item.setDonGia(donGia);
             item.setSoLuong(soLuong);
             item.setThanhTien(donGia * soLuong);
-            item.setLinhKienID(selected.getID());
+            item.setLinhKien(linhKien);
             slist.add(item);
             this.setVisible(false);
             HoaDonView hoaDonView = new HoaDonView(nhanvien, nhaCungCap, slist);

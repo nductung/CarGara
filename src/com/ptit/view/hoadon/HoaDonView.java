@@ -63,7 +63,7 @@ public class HoaDonView extends javax.swing.JFrame {
             for (HoadonLinhkien item : slist) {
                 tongTien += item.getThanhTien();
                 model.addRow(new Object[]{
-                    item.getMa(), item.getTen(), item.getHang(), item.getDonGia(), item.getSoLuong(), item.getThanhTien()
+                    (item.getLinhKien()).getMa(), (item.getLinhKien()).getTen(), (item.getLinhKien()).getHang(), item.getDonGia(), item.getSoLuong(), item.getThanhTien()
                 });
             }
             this.jLabelGetTongTien.setText(String.valueOf(tongTien));
@@ -302,7 +302,7 @@ public class HoaDonView extends javax.swing.JFrame {
         } else {
             int input = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn in hoá đơn?");
             if (input == 0) {
-                int status = hoaDonDAO.createHoaDon(nhanvien.getID(), nhaCungCap.getID(), slist);
+                int status = hoaDonDAO.createHoaDon(nhanvien, nhaCungCap, slist);
                 if (status == 0) {
                     JOptionPane.showMessageDialog(this, "Đã xảy ra lỗi");
                 } else {
@@ -356,7 +356,7 @@ public class HoaDonView extends javax.swing.JFrame {
         for (HoadonLinhkien item : slist) {
             tongTien += item.getThanhTien();
             model.addRow(new Object[]{
-                item.getMa(), item.getTen(), item.getHang(), item.getDonGia(), item.getSoLuong(), item.getThanhTien()
+                (item.getLinhKien()).getMa(), (item.getLinhKien()).getTen(), (item.getLinhKien()).getHang(), item.getDonGia(), item.getSoLuong(), item.getThanhTien()
             });
         }
         this.jLabelGetTongTien.setText(String.valueOf(tongTien));

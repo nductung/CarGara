@@ -50,7 +50,7 @@ public class LinhKienDAO extends DAO {
     public int createLinhKien(LinhKien linhKien) {
         int row = 0;
         try {
-            String check = "SELECT * FROM LinhKien WHERE nhaCungCapID = " + linhKien.getNhaCungCapID() + " AND LOWER( ma ) = '" + linhKien.getMa() + "'";
+            String check = "SELECT * FROM LinhKien WHERE nhaCungCapID = " + (linhKien.getNhaCungCap()).getID() + " AND LOWER( ma ) = '" + linhKien.getMa() + "'";
             Statement stmt = connect.createStatement();
             ResultSet rs = stmt.executeQuery(check);
             if (rs.next()) {
@@ -61,7 +61,7 @@ public class LinhKienDAO extends DAO {
                 prepar.setString(1, linhKien.getMa());
                 prepar.setString(2, linhKien.getTen());
                 prepar.setString(3, linhKien.getDonVi());
-                prepar.setInt(4, linhKien.getNhaCungCapID());
+                prepar.setInt(4, (linhKien.getNhaCungCap()).getID());
                 prepar.setString(5, linhKien.getHang());
                 row = prepar.executeUpdate();
                 if (row == 1) {
