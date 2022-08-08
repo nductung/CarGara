@@ -25,9 +25,9 @@ public class HoaDonDAO extends DAO {
     public int createHoaDon(Nhanvien nhanVien, NhaCungCap nhaCungCap, List<HoadonLinhkien> slist) {
         int row = 0;
         try {
-            StringBuilder sql = new StringBuilder("INSERT INTO HoadonLinhkien (donGia, soLuong, thanhTien, hoaDonID, linhKienID) VALUES (?,?,?,?,?)");
+            StringBuilder sql = new StringBuilder("INSERT INTO tblHoadonLinhkien (donGia, soLuong, thanhTien, hoaDonID, linhKienID) VALUES (?,?,?,?,?)");
 
-            String sql2 = "INSERT INTO HoaDon VALUES(?,?,?,?,?)";
+            String sql2 = "INSERT INTO tblHoaDon VALUES(?,?,?,?,?)";
 
             connect.setAutoCommit(false);
 

@@ -23,9 +23,9 @@ public class NhaCungCapDAO extends DAO {
         List<NhaCungCap> nhaCungCaps = null;
         String sql;
         if (key.isEmpty()) {
-            sql = "SELECT * FROM NhaCungCap";
+            sql = "SELECT * FROM tblNhaCungCap";
         } else {
-            sql = "SELECT * FROM NhaCungCap WHERE LOWER( ten ) LIKE  '%" + key + "%'";
+            sql = "SELECT * FROM tblNhaCungCap WHERE LOWER( ten ) LIKE  '%" + key + "%'";
         }
         try {
             Statement stmt = connect.createStatement();
@@ -52,13 +52,13 @@ public class NhaCungCapDAO extends DAO {
     public int createNhaCungCap(NhaCungCap nhaCungCap) {
         int row = 0;
         try {
-            String check = "SELECT * FROM NhaCungCap WHERE LOWER( ma ) = '" + nhaCungCap.getMa() + "'";
+            String check = "SELECT * FROM tblNhaCungCap WHERE LOWER( ma ) = '" + nhaCungCap.getMa() + "'";
             Statement stmt = connect.createStatement();
             ResultSet rs = stmt.executeQuery(check);
             if (rs.next()) {
                 row = -1;
             } else {
-                String sql = "INSERT INTO NhaCungCap VALUES(?,?,?,?,?,?)";
+                String sql = "INSERT INTO tblNhaCungCap VALUES(?,?,?,?,?,?)";
                 PreparedStatement prepar = connect.prepareStatement(sql);
                 prepar.setString(1, nhaCungCap.getMa());
                 prepar.setString(2, nhaCungCap.getTen());

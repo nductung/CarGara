@@ -3,13 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/dao/NhanvienDAO.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/model/NhaCungCap.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/test/com/ptit/dao/TestLinhKienDAO.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/model/Nhanvien.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/user/LoginView.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/control/Application.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/hoadon/HoaDonView.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/model/HoadonLinhkien.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/model/HoaDon.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/dao/DAO.java</file>
             <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/test/com/ptit/dao/TestHoaDonDAO.java</file>
             <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/linhkien/SearchLinhKienView.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/test/com/ptit/dao/TestNhanvienDAO.java</file>
             <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/nhacungcap/AddNhaCungCapView.java</file>
-            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/user/LoginView.java</file>
-            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/hoadon/HoaDonView.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/dao/LinhKienDAO.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/test/com/ptit/dao/TestNhaCungCapDAO.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/dao/NhaCungCapDAO.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/model/LinhKien.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/dao/HoaDonDAO.java</file>
+            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/nhacungcap/SearchNhaCungCapView.java</file>
             <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/user/HomePageView.java</file>
-            <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/nhacungcap/SearchNhaCungCaprView.java</file>
             <file>file:/Users/tungnd/Documents/PTIT/PTTKDBCLPM/CarGara/src/com/ptit/view/linhkien/AddLinhKienView.java</file>
         </group>
     </open-files>

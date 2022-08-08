@@ -211,7 +211,7 @@ public class AddNhaCungCapView extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, "Đã thêm vào cơ sở dữ liệu");
                 this.setVisible(false);
-                SearchNhaCungCaprView searchCustomerView = new SearchNhaCungCaprView(nhanvien);
+                SearchNhaCungCapView searchCustomerView = new SearchNhaCungCapView(nhanvien);
                 searchCustomerView.setVisible(true);
                 searchCustomerView.setTitle("Nhà cung cấp ");
             }
@@ -240,7 +240,7 @@ public class AddNhaCungCapView extends javax.swing.JFrame {
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        SearchNhaCungCaprView searchCustomerView = new SearchNhaCungCaprView(nhanvien);
+        SearchNhaCungCapView searchCustomerView = new SearchNhaCungCapView(nhanvien);
         searchCustomerView.setVisible(true);
         searchCustomerView.setTitle("Nhà cung cấp ");
     }//GEN-LAST:event_jButtonBackActionPerformed

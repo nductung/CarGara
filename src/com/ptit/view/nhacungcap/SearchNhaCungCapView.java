@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author TUNGND
  */
-public class SearchNhaCungCaprView extends javax.swing.JFrame {
+public class SearchNhaCungCapView extends javax.swing.JFrame {
 
     Nhanvien nhanvien;
     List<NhaCungCap> list;
@@ -29,7 +29,7 @@ public class SearchNhaCungCaprView extends javax.swing.JFrame {
     /**
      * Creates new form SearchCustomerView
      */
-    public SearchNhaCungCaprView(Nhanvien nv) {
+    public SearchNhaCungCapView(Nhanvien nv) {
         initComponents();
         nhanvien = nv;
         nhaCungCapDAO = new NhaCungCapDAO();
@@ -240,28 +240,30 @@ public class SearchNhaCungCaprView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SearchNhaCungCaprView.class
+            java.util.logging.Logger.getLogger(SearchNhaCungCapView.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SearchNhaCungCaprView.class
+            java.util.logging.Logger.getLogger(SearchNhaCungCapView.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SearchNhaCungCaprView.class
+            java.util.logging.Logger.getLogger(SearchNhaCungCapView.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SearchNhaCungCaprView.class
+            java.util.logging.Logger.getLogger(SearchNhaCungCapView.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SearchNhaCungCaprView(null).setVisible(true);
+                new SearchNhaCungCapView(null).setVisible(true);
             }
         });
     }

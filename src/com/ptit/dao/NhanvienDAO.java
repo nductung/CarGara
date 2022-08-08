@@ -17,7 +17,7 @@ import java.sql.SQLException;
 public class NhanvienDAO extends DAO {
 
     public Nhanvien checkLogin(String username, String password) {
-        String sql = "SELECT * FROM NhanVien WHERE username = ? AND password = ?";
+        String sql = "SELECT * FROM tblNhanVien WHERE username = ? AND password = ?";
         Nhanvien nhanvien = null;
         try {
             PreparedStatement prepar = connect.prepareStatement(sql);

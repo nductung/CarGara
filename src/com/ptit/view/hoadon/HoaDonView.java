@@ -6,7 +6,7 @@
 package com.ptit.view.hoadon;
 
 import com.ptit.view.user.HomePageView;
-import com.ptit.view.nhacungcap.SearchNhaCungCaprView;
+import com.ptit.view.nhacungcap.SearchNhaCungCapView;
 import com.ptit.view.linhkien.SearchLinhKienView;
 import com.ptit.dao.HoaDonDAO;
 import com.ptit.model.HoadonLinhkien;
@@ -334,7 +334,7 @@ public class HoaDonView extends javax.swing.JFrame {
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        SearchNhaCungCaprView searchCustomerView = new SearchNhaCungCaprView(nhanvien);
+        SearchNhaCungCapView searchCustomerView = new SearchNhaCungCapView(nhanvien);
         searchCustomerView.setVisible(true);
         searchCustomerView.setTitle("Nhà cung cấp");
     }//GEN-LAST:event_jButtonBackActionPerformed

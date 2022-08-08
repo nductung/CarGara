@@ -23,9 +23,9 @@ public class LinhKienDAO extends DAO {
         List<LinhKien> linhKiens = null;
         String sql;
         if (key.isEmpty()) {
-            sql = "SELECT * FROM LinhKien WHERE nhaCungCapID = " + nhaCungCapID + "";
+            sql = "SELECT * FROM tblLinhKien WHERE nhaCungCapID = " + nhaCungCapID + "";
         } else {
-            sql = "SELECT * FROM LinhKien WHERE nhaCungCapID = " + nhaCungCapID + " AND LOWER( ten ) LIKE  '%" + key + "%'";
+            sql = "SELECT * FROM tblLinhKien WHERE nhaCungCapID = " + nhaCungCapID + " AND LOWER( ten ) LIKE  '%" + key + "%'";
         }
         try {
             Statement stmt = connect.createStatement();
@@ -50,13 +50,13 @@ public class LinhKienDAO extends DAO {
     public int createLinhKien(LinhKien linhKien) {
         int row = 0;
         try {
-            String check = "SELECT * FROM LinhKien WHERE nhaCungCapID = " + (linhKien.getNhaCungCap()).getID() + " AND LOWER( ma ) = '" + linhKien.getMa() + "'";
+            String check = "SELECT * FROM tblLinhKien WHERE nhaCungCapID = " + (linhKien.getNhaCungCap()).getID() + " AND LOWER( ma ) = '" + linhKien.getMa() + "'";
             Statement stmt = connect.createStatement();
             ResultSet rs = stmt.executeQuery(check);
             if (rs.next()) {
                 row = -1;
             } else {
-                String sql = "INSERT INTO LinhKien VALUES(?,?,?,?,?)";
+                String sql = "INSERT INTO tblLinhKien VALUES(?,?,?,?,?)";
                 PreparedStatement prepar = connect.prepareStatement(sql);
                 prepar.setString(1, linhKien.getMa());
                 prepar.setString(2, linhKien.getTen());

@@ -5,7 +5,7 @@
  */
 package com.ptit.view.user;
 
-import com.ptit.view.nhacungcap.SearchNhaCungCaprView;
+import com.ptit.view.nhacungcap.SearchNhaCungCapView;
 import com.ptit.model.Nhanvien;
 
 /**
@@ -107,7 +107,7 @@ public class HomePageView extends javax.swing.JFrame {
     private void jButtonNhapLinhKienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNhapLinhKienActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        SearchNhaCungCaprView searchCustomerView = new SearchNhaCungCaprView(nhanvien);
+        SearchNhaCungCapView searchCustomerView = new SearchNhaCungCapView(nhanvien);
         searchCustomerView.setVisible(true);
         searchCustomerView.setTitle("Nhà cung cấp");
     }//GEN-LAST:event_jButtonNhapLinhKienActionPerformed
